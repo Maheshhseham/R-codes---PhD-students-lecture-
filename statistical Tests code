@@ -1,0 +1,106 @@
+## creating data set in R
+
+#step 1: creating a variable and assign values 
+ID <- c(1,2,3)
+Age <- c(21,25,24)
+Gender <- c("Male","Female","Male")
+Locality <- c("Urban", "Rural", "Rural")
+
+##step 2: crating a complete data set
+
+data1 <- data.frame(ID,Age,Gender,Locality)
+
+## Steps to view the dataset
+View(data1)
+View(data1)
+
+## steps to understand the basic pattern of data
+head(data1)
+tail(data1)
+
+
+## visualizing specific variables
+View(data1$Age)
+summary(data1$Age)
+
+## extracting data is represented by $ symbol from a data set 
+
+range(data1$Age)
+var(data1$Age)
+
+summary(data1$Age,data1$ID)
+
+
+
+
+
+
+
+
+
+
+wilcox.test(MPH_dummy_dataset$Before, MPH_dummy_dataset$After, paired = TRUE)
+
+
+
+
+
+
+
+
+
+
+
+## ANOVA - FOR COMNPARING QUANITTAIVE VARIABLE IN MORE THAN 2 GROUPS OF PARTICIPANTS
+
+
+
+
+
+
+aov(MPH_dummy_dataset$BMI~MPH_dummy_dataset$Group)
+
+anova_data <- aov(MPH_dummy_dataset$BMI~MPH_dummy_dataset$Group)
+summary(anova_data)
+
+aov(BMI~Group, data=MPH_dummy_dataset)
+
+
+
+kruskal.test(MPH_dummy_dataset$BMI~MPH_dummy_dataset$Group)
+
+
+lm(BMI~Age+Sex+Smoking+BP,data=MPH_dummy_dataset)
+
+LINEARRREG_DATA1 <-lm(BMI~Age+Sex+Smoking+BP,data=MPH_dummy_dataset)
+
+summary(LINEARRREG_DATA1)
+
+linearreg_data <-lm(BMI~Age,data=MPH_dummy_dataset)
+summary(linearreg_data)
+
+
+glm(Disease~Age+Sex+Smoking+BP,data = MPH_dummy_dataset,family = binomial)
+
+logit<-glm(diseasenew~Age+Sex+Smoking+BP,data = MPH_dummy_dataset,family = binomial)
+summary(logit)
+
+exp(confint(logit))
+exp(logit)
+
+exp(coef(logit)
+
+cor.test(MPH_dummy_dataset$Age,MPH_dummy_dataset$BMI,method ="spearman")
+
+ggplot(MPH_dummy_dataset,aes(x=Age,y=BMI))+geom_point()
+
+library(ggplot2)
+ggplot(MPH_dummy_dataset,aes(x=Age, y=BMI))+ geom_point()
+
+
+
+
+
+
+
+
